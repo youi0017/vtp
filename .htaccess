@@ -1,0 +1,17 @@
+<Files ~ "^.(htaccess|htpasswd)$">
+deny from all
+</Files>
+
+Options -Indexes
+order deny,allow
+
+RewriteEngine on
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule (.*) http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+#不存在(不是文件 且 不是目录)，定向到 index.php
+RewriteCond $1 !^(index\.php)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^([a-zA-Z0-9_\-]{0,}|)/?([a-zA-Z0-9_\-]{0,}|)/?(\.html)?$ index.php?__dir=$1&__prm=$2 [L,QSA]
