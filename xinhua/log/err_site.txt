@@ -1,0 +1,93 @@
+
+Meet Error[2]: 2018-04-01 21:15:37
+include([编译文件:&lt;?=$tpl_name..$tpl_ext;?&gt;]不存在！): failed to open stream: No such file or directory
+Error on line 10 in D:\web_www\local\app\xinhua\ctl\index.php
+Uri is /
+
+Meet Error[2]: 2018-04-01 21:15:37
+include(): Failed opening '[编译文件:&lt;?=$tpl_name..$tpl_ext;?&gt;]不存在！' for inclusion (include_path='.;C:\php\pear')
+Error on line 10 in D:\web_www\local\app\xinhua\ctl\index.php
+Uri is /
+[01-Apr-2018 21:17:07 PRC] PHP Parse error:  syntax error, unexpected end of file in D:\web_www\local\sys\lib\assign.php on line 65
+[01-Apr-2018 21:17:07 PRC] PHP Stack trace:
+[01-Apr-2018 21:17:07 PRC] PHP   1. {main}() D:\web_www\local\index.php:0
+[01-Apr-2018 21:17:07 PRC] PHP   2. core\vit::exc() D:\web_www\local\index.php:15
+[01-Apr-2018 21:17:07 PRC] PHP   3. ctl\index->dft() D:\web_www\local\sys\core\vit.php:115
+[01-Apr-2018 21:17:07 PRC] PHP   4. spl_autoload_call() D:\web_www\local\sys\core\vit.php:10
+[01-Apr-2018 21:17:07 PRC] PHP   5. _my_loader() D:\web_www\local\sys\core\vit.php:0
+[01-Apr-2018 21:17:52 PRC] PHP Parse error:  syntax error, unexpected end of file in D:\web_www\local\sys\lib\assign.php on line 65
+[01-Apr-2018 21:17:52 PRC] PHP Stack trace:
+[01-Apr-2018 21:17:52 PRC] PHP   1. {main}() D:\web_www\local\index.php:0
+[01-Apr-2018 21:17:52 PRC] PHP   2. core\vit::exc() D:\web_www\local\index.php:15
+[01-Apr-2018 21:17:52 PRC] PHP   3. ctl\index->dft() D:\web_www\local\sys\core\vit.php:115
+[01-Apr-2018 21:17:52 PRC] PHP   4. spl_autoload_call() D:\web_www\local\sys\core\vit.php:10
+[01-Apr-2018 21:17:52 PRC] PHP   5. _my_loader() D:\web_www\local\sys\core\vit.php:0
+[01-Apr-2018 21:18:29 PRC] PHP Parse error:  syntax error, unexpected end of file in D:\web_www\local\sys\lib\assign.php on line 69
+[01-Apr-2018 21:18:29 PRC] PHP Stack trace:
+[01-Apr-2018 21:18:29 PRC] PHP   1. {main}() D:\web_www\local\index.php:0
+[01-Apr-2018 21:18:29 PRC] PHP   2. core\vit::exc() D:\web_www\local\index.php:15
+[01-Apr-2018 21:18:29 PRC] PHP   3. ctl\index->dft() D:\web_www\local\sys\core\vit.php:115
+[01-Apr-2018 21:18:29 PRC] PHP   4. spl_autoload_call() D:\web_www\local\sys\core\vit.php:10
+[01-Apr-2018 21:18:29 PRC] PHP   5. _my_loader() D:\web_www\local\sys\core\vit.php:0
+[01-Apr-2018 21:18:44 PRC] PHP Parse error:  syntax error, unexpected end of file in D:\web_www\local\sys\lib\assign.php on line 64
+[01-Apr-2018 21:18:44 PRC] PHP Stack trace:
+[01-Apr-2018 21:18:44 PRC] PHP   1. {main}() D:\web_www\local\index.php:0
+[01-Apr-2018 21:18:44 PRC] PHP   2. core\vit::exc() D:\web_www\local\index.php:15
+[01-Apr-2018 21:18:44 PRC] PHP   3. ctl\index->dft() D:\web_www\local\sys\core\vit.php:115
+[01-Apr-2018 21:18:44 PRC] PHP   4. spl_autoload_call() D:\web_www\local\sys\core\vit.php:10
+[01-Apr-2018 21:18:44 PRC] PHP   5. _my_loader() D:\web_www\local\sys\core\vit.php:0
+[01-Apr-2018 21:18:54 PRC] PHP Parse error:  syntax error, unexpected end of file in D:\web_www\local\sys\lib\assign.php on line 64
+[01-Apr-2018 21:18:54 PRC] PHP Stack trace:
+[01-Apr-2018 21:18:54 PRC] PHP   1. {main}() D:\web_www\local\index.php:0
+[01-Apr-2018 21:18:54 PRC] PHP   2. core\vit::exc() D:\web_www\local\index.php:15
+[01-Apr-2018 21:18:54 PRC] PHP   3. ctl\index->dft() D:\web_www\local\sys\core\vit.php:115
+[01-Apr-2018 21:18:54 PRC] PHP   4. spl_autoload_call() D:\web_www\local\sys\core\vit.php:10
+[01-Apr-2018 21:18:54 PRC] PHP   5. _my_loader() D:\web_www\local\sys\core\vit.php:0
+[01-Apr-2018 21:19:04 PRC] PHP Parse error:  syntax error, unexpected end of file in D:\web_www\local\sys\lib\assign.php on line 64
+[01-Apr-2018 21:19:04 PRC] PHP Stack trace:
+[01-Apr-2018 21:19:04 PRC] PHP   1. {main}() D:\web_www\local\index.php:0
+[01-Apr-2018 21:19:04 PRC] PHP   2. core\vit::exc() D:\web_www\local\index.php:15
+[01-Apr-2018 21:19:04 PRC] PHP   3. ctl\index->dft() D:\web_www\local\sys\core\vit.php:115
+[01-Apr-2018 21:19:04 PRC] PHP   4. spl_autoload_call() D:\web_www\local\sys\core\vit.php:10
+[01-Apr-2018 21:19:04 PRC] PHP   5. _my_loader() D:\web_www\local\sys\core\vit.php:0
+[01-Apr-2018 21:19:21 PRC] PHP Parse error:  syntax error, unexpected end of file in D:\web_www\local\sys\lib\assign.php on line 64
+[01-Apr-2018 21:19:21 PRC] PHP Stack trace:
+[01-Apr-2018 21:19:21 PRC] PHP   1. {main}() D:\web_www\local\index.php:0
+[01-Apr-2018 21:19:21 PRC] PHP   2. core\vit::exc() D:\web_www\local\index.php:15
+[01-Apr-2018 21:19:21 PRC] PHP   3. ctl\index->dft() D:\web_www\local\sys\core\vit.php:115
+[01-Apr-2018 21:19:21 PRC] PHP   4. spl_autoload_call() D:\web_www\local\sys\core\vit.php:10
+[01-Apr-2018 21:19:21 PRC] PHP   5. _my_loader() D:\web_www\local\sys\core\vit.php:0
+[01-Apr-2018 21:19:28 PRC] PHP Parse error:  syntax error, unexpected end of file in D:\web_www\local\sys\lib\assign.php on line 67
+[01-Apr-2018 21:19:28 PRC] PHP Stack trace:
+[01-Apr-2018 21:19:28 PRC] PHP   1. {main}() D:\web_www\local\index.php:0
+[01-Apr-2018 21:19:28 PRC] PHP   2. core\vit::exc() D:\web_www\local\index.php:15
+[01-Apr-2018 21:19:28 PRC] PHP   3. ctl\index->dft() D:\web_www\local\sys\core\vit.php:115
+[01-Apr-2018 21:19:28 PRC] PHP   4. spl_autoload_call() D:\web_www\local\sys\core\vit.php:10
+[01-Apr-2018 21:19:28 PRC] PHP   5. _my_loader() D:\web_www\local\sys\core\vit.php:0
+[01-Apr-2018 21:19:49 PRC] PHP Parse error:  syntax error, unexpected end of file in D:\web_www\local\sys\lib\assign.php on line 67
+[01-Apr-2018 21:19:49 PRC] PHP Stack trace:
+[01-Apr-2018 21:19:49 PRC] PHP   1. {main}() D:\web_www\local\index.php:0
+[01-Apr-2018 21:19:49 PRC] PHP   2. core\vit::exc() D:\web_www\local\index.php:15
+[01-Apr-2018 21:19:49 PRC] PHP   3. ctl\index->dft() D:\web_www\local\sys\core\vit.php:115
+[01-Apr-2018 21:19:49 PRC] PHP   4. spl_autoload_call() D:\web_www\local\sys\core\vit.php:10
+[01-Apr-2018 21:19:49 PRC] PHP   5. _my_loader() D:\web_www\local\sys\core\vit.php:0
+
+Meet Error[2]: 2018-04-01 21:20:29
+include(): Filename cannot be empty
+Error on line 10 in D:\web_www\local\app\xinhua\ctl\index.php
+Uri is /
+
+Meet Error[2]: 2018-04-01 21:20:29
+include(): Failed opening '' for inclusion (include_path='.;C:\php\pear')
+Error on line 10 in D:\web_www\local\app\xinhua\ctl\index.php
+Uri is /
+
+Meet Error[2]: 2018-04-01 21:22:54
+include(): Filename cannot be empty
+Error on line 10 in D:\web_www\local\app\xinhua\ctl\index.php
+Uri is /
+
+Meet Error[2]: 2018-04-01 21:22:54
+include(): Failed opening '' for inclusion (include_path='.;C:\php\pear')
+Error on line 10 in D:\web_www\local\app\xinhua\ctl\index.php
+Uri is /
