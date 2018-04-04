@@ -125,33 +125,9 @@ class tools
 	 */
 	public static function arr_rand($arr, $lenth=5)
 	{
-		/*
-		//复杂暂不用
-		if(!is_array($arr)) $arr=json_decode($arr);
-		if(!is_array($arr)) return [];
-		$keys=array_keys($arr);
-		$r=[];
-		$i=0;
-		foreach($keys as $k)
-		{
-			if($i>=$lenth) break;
-			$r[$i]=$arr[$k];
-			$i++;
-		}
-		return $r;
-		*/
-		
-
 		if(!is_array($arr)) $arr=json_decode($arr);
 		shuffle($arr);
-		//返回片段
 		return array_slice($arr, 0, $lenth);
-
-		//shuffle似乎不可打乱二维数据，但本机测试时正常 20170929
-		//$t=count($arr);
-		//if($length>$t) $length=$t;
-		//$keys=array_rand($arr,5);
-
 	}
 
 

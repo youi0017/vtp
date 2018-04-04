@@ -41,7 +41,6 @@
  * 	
  */
 //header("Content-type: text/html; charset=utf-8");  
-
 class vit
 {
 	public function __construct(){}
@@ -71,7 +70,6 @@ class vit
 
 		
 		//控制器与影响器
-		//var_dump($_GET['__dir']);
 		if(isset($_GET['__dir']))
 		{
 			$dir = array_filter(explode('-', $_GET['__dir']));
@@ -88,7 +86,6 @@ class vit
 			$prm = array_filter(explode('-', $_GET['__prm']), function($v)
 			{
 				return $v!='';
-				//if($v!='') return true;
 			});
 
 		}

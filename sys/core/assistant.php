@@ -2,13 +2,7 @@
 /**
  * vit 框架助理
  * 20161101 LM:20170703
-
-	注意：20170725
-		1. E_ERROR、E_PARSE、E_CORE_ERROR、E_CORE_WARNING、 E_COMPILE_ERROR、E_COMPILE_WARNING是不会被这个句柄处理的，也就是会用最原始的方式显示出来。不过出现这些错误都是编 译或PHP内核出错，在通常情况下不会发生。
-		2.使用set_error_handler()后，error_reporting()将会失效。也就是所有的错误（除上述的错误）都会交给自定义的函数处理。
  */
-
-
 
 //开启所有错误报告
 error_reporting(E_ALL);
@@ -18,8 +12,6 @@ set_error_handler('_get_err');
 
 //注册__autoload
 spl_autoload_register('_my_loader');
-
-
 
 
 /**
@@ -37,14 +29,12 @@ spl_autoload_register('_my_loader');
 	
 	一般性错误 和 编译性错误 均使用日志文件：ERROR_LOG_FILE
  */
-
 function _get_err($errno, $errstr, $errfile, $errline)
 {
 	//一般错误(显示)
     if(ERR_ON>0)
     {
 		echo '<p><b>Meet Error</b>!<br/>',$errstr,'<br/>Error on line ',$errline,'<p><br/>';
-		//,' in ',strrchr($errfile, WINOS?'\\':'/')
     }
 
 	//一般错误(记录)
@@ -54,7 +44,6 @@ function _get_err($errno, $errstr, $errfile, $errline)
 		error_log($log_msg, 3, ERROR_LOG_FILE);
     }
 }
-
 
 
 /**
@@ -69,7 +58,6 @@ function _get_err($errno, $errstr, $errfile, $errline)
 function _my_loader($cls_name)
 {
 	$cls_name = str_replace('\\', '/', $cls_name);
-	//var_dump('aaaaa==='.$cls_name);
 	
     //优先加载 系统库, 系统库不存在则在 项目库 中查找
 	$cls_path = FR_SYS.$cls_name.'.php';
@@ -78,15 +66,11 @@ function _my_loader($cls_name)
 	{
 		//从 "项目目录" 中查找，不存在则抛出错误
 		$cls_path = FR_APP.APP_NAME.'/'.$cls_name.'.php';
-		//var_dump($cls_path);
 		
 		if(is_file($cls_path)) include $cls_path;
-		//else throw new \Exception('Load Err: '.$cls_name.' not exit!');
 		else
 		{
-			/*\lib\rtn::ep('404', '无效控制 - X');*/
 			lib\rtn::mep('访问资源['.$cls_name.']不存在！');
-			//return FR_SYS.'lib/rtn.php';
 			\lib\tools::note_err('loader class not exited! file path is'.$cls_path);
 		}
 	}
@@ -102,20 +86,11 @@ if(ERR_ON>0)
 	
 	//以HTML形式显示到页面：开(默认开)
 	ini_set('html_errors', 1);
-	
-	//是否在同一行中重复显示一样的错误信息开(默认关)
-	//ini_set('ignore_repeated_errors', 'On');
-	//是否重复显示来自同个文件同行代码的错误开(默认关)
-	//ini_set('ignore_repeated_source', 'On');
-	
 }
 else
 {
 	//关闭错误显示
 	ini_set('display_errors', 0);
-	
-	//以HTML形式显示到页面:关(默认开)
-	//ini_set('html_errors', 0);
 }
 
 

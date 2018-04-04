@@ -1,14 +1,8 @@
 <?php namespace lib;
 /**
  * @author chy
- * 返回结果(json字符)
- *
- * new result(1, '成功', 'src=...', '200');
- * result::OK('成功', 'src=...', '200');
- * result::OK('错误', 'src=...', '200');
- * result::OK('成功', ['d1'=>'dd1', 'd2'=>'dd2'], '200');
- * 
- * 
+ * 返回库
+ * 20160301
  */
 
  
@@ -105,10 +99,6 @@ class rtn
 	}
 
 
-
-
-    
-
     //== js执行的静态方法 =======================================
     //输出js代码
     public static function jscript($js_code='')
@@ -123,13 +113,4 @@ class rtn
     {
         exit('<script type="text/javascript">console.log("'.$jsVar.'")</script>');
     }
-
-
-
-    
-
-
-
-    
-
 }

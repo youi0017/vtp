@@ -19,7 +19,7 @@ define('FR_APP',  FR.'app/');
 //公共目录
 define('FR_PUB',  FR.'pub/');
 
-//2. APP名字
+//2. APP名字，根据项目配置
 const APP_NAME='xinhua';
 
 

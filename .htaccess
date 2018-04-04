@@ -9,7 +9,7 @@ RewriteEngine on
 #RewriteCond %{HTTP_HOST} !^www\.
 #RewriteRule (.*) http://www.%{HTTP_HOST}/$1 [R=301,L]
 
-#不存在(不是文件 且 不是目录)，定向到 index.php
+#rewrite to index.php
 RewriteCond $1 !^(index\.php)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
