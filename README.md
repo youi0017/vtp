@@ -1,7 +1,7 @@
 # vtp
 # this is vtp-php framework
-# VTP/PHPÊÇÒ»¸ö¼òµ¥¿ìËÙµÄPHP VC¿ò¼Ü£¬ÓÉchuyuhangÏÈÉúÓÚ2013Äê9ÔÂ´´½¨£¬ÖÁ½ñÒÑÓÐ´óÁ¿µÄÓ¦ÓÃÊµÀý£¬¿ÉÒÔËµÊÇÒ»Ì×·Ç³£ÊµÓÃµÄ¿ìËÙ¿ª·¢¹¤¾ß¡£
-# ÆäÌØµãÊÇ£º°²È«¡¢ÇáÁ¿¡¢Áé»î¡£
+# VTP/PHPæ˜¯ä¸€ä¸ªç®€å•å¿«é€Ÿçš„PHP VCæ¡†æž¶ï¼Œç”±chuyuhangå…ˆç”ŸäºŽ2013å¹´9æœˆåˆ›å»ºï¼Œç»è¿‡å¤§é‡çš„åº”ç”¨ï¼Œæ˜¯ä¸€å¥—éžå¸¸å®žç”¨çš„å¿«é€Ÿå¼€å‘å·¥å…·ã€‚
+# å…¶ç‰¹ç‚¹æ˜¯ï¼šå®‰å…¨ã€è½»é‡ã€çµæ´»ã€‚
 # 20180404
 
 
