@@ -8,17 +8,29 @@
  *
 */
 
-class ctl
+abstract class ctl
 {
 	protected $prms;
 
-	function __construct($prms=null){ unset($_GET['__dir'], $_GET['__prm']); $this->prms = $prms;}
+	function __construct($prms=null)
+	{
+		$this->prms = $prms;
 
+		//注：$prms不确定是否会被 dFun函数 注入 20190228
+		if(!empty($_GET) || isset($prms)) \lib\route::disDfun();
+	}
+
+	/*
 	//默认控制器
-	public function dft(){ \lib\rtn::mep('无效执行 - A'); }
+	public function _dft()
+	{
+		exit('不存在的执行器:'.CTL.'-'.ACT);
+		//\lib\rtn::mep('无效执行 - A');
+	}
+	*/	
 
 	//影响重置器: 默认影响器
-	public function act(){ \lib\rtn::mep('无效执行 - B'); }
+	public function _dft(){ \lib\rtn::mep('404 无效执行 - '.ACT); }
 
 	function __destruct(){}
 }

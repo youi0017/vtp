@@ -70,6 +70,7 @@ function _my_loader($cls_name)
 		if(is_file($cls_path)) include $cls_path;
 		else
 		{
+			$cls_name = str_replace('ctl','', $cls_name);
 			lib\rtn::mep('访问资源['.$cls_name.']不存在！');
 			\lib\tools::note_err('loader class not exited! file path is'.$cls_path);
 		}

@@ -22,7 +22,6 @@ define('FR_PUB',  FR.'pub/');
 //2. APP名字，根据项目配置
 const APP_NAME='xinhua';
 
-
 //3. 项目基本配置
 //配置时区
 date_default_timezone_set('PRC');

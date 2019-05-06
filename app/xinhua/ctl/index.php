@@ -8,7 +8,12 @@ class index extends \clib\ctl
 
 		//加载视图
 		include \lib\assign::load('index');
+	}
 
+	public function cs()
+	{
+		//轻型输出
+		\lib\rtn::mep('默认控制器下的cs方法！');
 	}
 	
 }

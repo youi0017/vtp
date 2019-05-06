@@ -1,0 +1,23 @@
+<Files ~ "^(.htaccess|.htpasswd|my.sevrconf)$">
+Require all denied
+</Files>
+#测试使用file_get_content看是否可以取得
+
+#控制访问
+Options +Indexes
+#order deny,allow
+
+#重置默认文件
+DirectoryIndex abc.php index.php index.html index.htm
+
+#重写错误页
+ErrorDocument 404 /pub/fpage/404.html
+ErrorDocument 500 /pub/fpage/500.html
+
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.*)$ abc.php/$1 [QSA,PT,L]
+RewriteRule ^([a-zA-Z0-9_\-,]{0,}|)/?([a-zA-Z0-9_\-]{0,}|)/?(\.html|\.htm|\.asp|\.jsp)?$ abc.php/$1/$2 [QSA,PT,L]
+

@@ -68,50 +68,64 @@ class vit
 		$prm=null;//参数为空 20161002
 		$pn=(isset($_GET['pn'])&&$_GET['pn']>1) ? floor($_GET['pn']) : 1;//页码
 
-		
-		//控制器与影响器
-		if(isset($_GET['__dir']))
-		{
-			$dir = array_filter(explode('-', $_GET['__dir']));
-			//if(!empty($dir[0])) $ctl=str_replace(',', '\\', $dir[0]);
-			if(!empty($dir[0])) $ctl=$dir[0];
-			if(!empty($dir[1])) $act=$dir[1];
-			unset($dir);
-		}
+		//var_dump($_SERVER['QUERY_STRING'], file_get_contents("php://input"));exit;
 
-		//参数
-		if(isset($_GET['__prm']) && $_GET['__prm']!='')
+		if(isset($_SERVER['PATH_INFO']))
 		{
-			//说明：过滤参数中的无效内容，如"--aa-"打断后为['','','aa','']，但参数的空值将被过滤，而索引不变($[2]=aa, $[0]是不存在的)，而后面对参数的判断直接使用isset($[0])即可(如不过滤，则还必需判断值是否为空)
-			$prm = array_filter(explode('-', $_GET['__prm']), function($v)
+			$all = array_values(array_filter(explode('/', $_SERVER['PATH_INFO'])));
+			//var_dump($all);
+			
+			//控制器与影响器
+			if(isset($all[0]))
 			{
-				return $v!='';
-			});
+				$dir = array_filter(explode('-', $all[0]));
+				//if(!empty($dir[0])) $ctl=str_replace(',', '\\', $dir[0]);
+				if(!empty($dir[0])) $ctl=$dir[0];
+				if(!empty($dir[1])) $act=$dir[1];
+				unset($dir);
+			}
 
+			//参数
+			if(isset($all[1]))
+			{
+				//说明：过滤参数中的无效内容，如"--aa-"打断后为['','','aa','']，但参数的空值将被过滤，而索引不变($[2]=aa, $[0]是不存在的)，而后面对参数的判断直接使用isset($[0])即可(如不过滤，则还必需判断值是否为空)
+				$prm = array_filter(explode('-', $all[1]), function($v)
+				{
+					return $v!='';
+				});
+
+			}
+			//exit;
 		}
 
+			
 		//定义全局参数
 		define('CTL', $ctl);//
 		define('ACT', $act);//
 		
 /*
-		var_dump($_SERVER['QUERY_STRING']);
-		var_dump($_GET);
+		//var_dump($_SERVER['REQUEST_URI'], $_SERVER['QUERY_STRING'], $_SERVER['PATH_INFO']);
+		//var_dump($_GET);
 		var_dump($ctl);
 		var_dump($act);
 		var_dump($prm);
 		var_dump($pn);
-		exit;		
+		exit;
 */
 		//\cls\auth::exc();//用在所用的控制器内20180127
 
 
 		//执行器执行响应(动作)
 		$ctl = '\\ctl\\'.str_replace(',', '\\', $ctl);
-		$_obj = new $ctl($prm);
-		return method_exists($_obj, $act) ? $_obj->$act() : (method_exists($_obj, 'act') ? $_obj->act() : \lib\rtn::ep());
+// var_dump($ctl);exit;
+		$ctlObj = new $ctl($prm);
 
+		//_dft为控制器父类中的万能方法
+		if(!method_exists($ctlObj, $act)) $act = '_dft';
+		//将执行结果返回
+		echo call_user_func_array([$ctlObj, $act], $_GET);
 	}
+
 
 	//释放
 	function __destruct(){}

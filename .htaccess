@@ -1,17 +1,20 @@
-<Files ~ "^.(htaccess|htpasswd)$">
-deny from all
+<Files ~ "^(.htaccess|.htpasswd|my.sevrconf)$">
+Require all denied
 </Files>
 
-Options -Indexes
-order deny,allow
+#控制访问
+Options +Indexes
+
+#重置默认文件
+DirectoryIndex abc.php index.php index.html index.htm
+
+#重写错误页
+ErrorDocument 404 /pub/fpage/404.html
+ErrorDocument 500 /pub/fpage/500.html
+
 
 RewriteEngine on
-#RewriteCond %{HTTP_HOST} !^www\.
-#RewriteRule (.*) http://www.%{HTTP_HOST}/$1 [R=301,L]
-
-#rewrite to index.php
-RewriteCond $1 !^(index\.php)
-RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^([a-zA-Z0-9_\-]{0,}|)/?([a-zA-Z0-9_\-]{0,}|)/?(\.html)?$ index.php?__dir=$1&__prm=$2 [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9_\-,]{0,}|)/?([a-zA-Z0-9_\-]{0,}|)/?(\.html|\.htm|\.asp|\.jsp)?$ abc.php/$1/$2 [QSA,PT,L]
+

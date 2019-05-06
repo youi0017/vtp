@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>New Document</title>
+<link type="text/css" href="jquery.page.css" rel="stylesheet" />
+<style type="text/css">
+
+
+</style>
+</head>
+<body>
+	
+
+
+<div id="page">
+
+</div>
+
+	
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.page.js"></script>
+<script type="text/javascript">
+
+$("#page").Page({
+    totalPages: 10,//total Pages
+    liNums: 3,//the li numbers(advice use odd)
+    activeClass: 'activP', //active class style
+    firstPage: '首页',//first button name
+    lastPage: '末页',//last button name
+    prv: '<',//prev button name
+    next: '>',//next button name
+    hasFirstPage: true,//whether has first button
+    hasLastPage: true,//whether has last button
+    hasPrv: true,//whether has prev button
+    hasNext: true,//whether has next button
+    callBack : function(page){
+        //callBack function，page:active page
+        console.log(page);
+    }
+});
+
+
+</script>
+</body>
+</html>

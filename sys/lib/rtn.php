@@ -18,13 +18,13 @@ class rtn
      */    
 	public static function okk($msg='success', $data='')
 	{
-		exit(json_encode(['status'=>1, 'msg'=>$msg, 'data'=>$data], JSON_UNESCAPED_UNICODE));
+		exit((string)json_encode(['status'=>1, 'msg'=>$msg, 'data'=>$data], JSON_UNESCAPED_UNICODE));
 	}
 
 	public static function err($msg='fail', $data='')
 	{
 		//header("http/1.1 404 Not Found");
-		exit(json_encode(['status'=>0, 'msg'=>$msg, 'data'=>$data], JSON_UNESCAPED_UNICODE));
+		exit((string)json_encode(['status'=>0, 'msg'=>$msg, 'data'=>$data], JSON_UNESCAPED_UNICODE));
 	}
 
 
