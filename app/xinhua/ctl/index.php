@@ -1,4 +1,7 @@
 <?php namespace ctl;
+use \lib\db4 as db;
+use \lib\assign;
+
 class index extends \clib\ctl
 {
 	public function dft()
@@ -7,7 +10,7 @@ class index extends \clib\ctl
 		//\lib\rtn::mep('这是默认页，但没有内容！');
 
 		//加载视图
-		include \lib\assign::load('index');
+		include assign::load('index');
 	}
 
 	public function cs()

@@ -3,7 +3,7 @@ Require all denied
 </Files>
 
 #控制访问
-Options +Indexes
+Options +Indexes +FollowSymlinks
 
 #重置默认文件
 DirectoryIndex abc.php index.php index.html index.htm
