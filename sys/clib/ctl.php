@@ -8,7 +8,7 @@
  *
 */
 
-abstract class ctl
+abstract class Ctl
 {
 	protected $prms;
 
@@ -30,7 +30,7 @@ abstract class ctl
 	*/	
 
 	//影响重置器: 默认影响器
-	public function _dft(){ \lib\rtn::mep('404 无效执行 - '.ACT); }
+	public function _index(){ \lib\rtn::mep('404 无效执行 - '.ACT); }
 
 	function __destruct(){}
 }

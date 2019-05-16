@@ -1,7 +1,7 @@
 <?php namespace ctl;
-class chy extends \clib\ctl
+class Chy extends \clib\ctl
 {
-	public function dft()
+	public function index()
 	{
 		//直接返回内容
 		return '<h1>欢迎来到chy的主页</h1>';

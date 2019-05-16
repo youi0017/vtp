@@ -33,6 +33,10 @@
  	4.6 $prm由[]变更为null。20161002
  	4.7 加入权限控制。 20170729
  * 	
+ * V5.0 20181227
+ 	1. url使用PATH_INFO取得并解析，不再用get
+ 	2. GET参数默认传入执行器（注：不对应型参）
+ 	3. 控制器使用大驼峰命名，默认控制器Index，默认执行器index
  * 	
  * 说明
  * 1. "定向模式"为url优化模式，为SEO设计，需了解apache的重定向
@@ -49,9 +53,9 @@ class vit
      * URL分发与定位：处理并取得url参数，并初始化 控制器
      * 
      	使用重写的URL,如：
-			/adm-dft/aa-bb-cc.html?sn=5&pn=3
+			/adm-index/aa-bb-cc.html?sn=5&pn=3
 	    不使用重写的URL,如：
-			/index.php?__dir=adm-dft&__prm=aa-bb-cc&sn=5&pn=3
+			/index.php?__dir=adm-index&__prm=aa-bb-cc&sn=5&pn=3
 		
 		说明:
 		1. 常规uri由2段'/'组成： 第一段("控制-影响")，第二段("参数1-参数2-参数x")
@@ -63,8 +67,8 @@ class vit
     public static function exc()
     {
 		//默认定义
-		$ctl='index';//默认控制器，用于主页
-		$act='dft';//默认响应dft，应与index不同
+		$ctl='Index';//默认控制器，用于主页
+		$act='index';//默认响应
 		$prm=null;//参数为空 20161002
 		$pn=(isset($_GET['pn'])&&$_GET['pn']>1) ? floor($_GET['pn']) : 1;//页码
 
@@ -120,8 +124,8 @@ class vit
 // var_dump($ctl);exit;
 		$ctlObj = new $ctl($prm);
 
-		//_dft为控制器父类中的万能方法
-		if(!method_exists($ctlObj, $act)) $act = '_dft';
+		//_index为控制器父类中的万能方法
+		if(!method_exists($ctlObj, $act)) $act = '_index';
 		//将执行结果返回
 		echo call_user_func_array([$ctlObj, $act], $_GET);
 	}

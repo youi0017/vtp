@@ -2,9 +2,9 @@
 use \lib\db4 as db;
 use \lib\assign;
 
-class index extends \clib\ctl
+class Index extends \clib\ctl
 {
-	public function dft()
+	public function index()
 	{
 		//轻型输出
 		//\lib\rtn::mep('这是默认页，但没有内容！');
